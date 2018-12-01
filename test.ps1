@@ -18,7 +18,7 @@ if ($spec.package.metadata.version.CompareTo($version)) {
 "TEST: Package should contain only install script"
 Add-Type -assembly "system.io.compression.filesystem"
 $zip = [IO.Compression.ZipFile]::OpenRead("$pwd\docker-cli.$version.nupkg")
-if ($zip.Entries.Count -ne 7) {
+if ($zip.Entries.Count -ne 5) {
   Write-Error "FAIL: Wrong count in nupkg!"
 }
 $zip.Dispose()
@@ -28,7 +28,7 @@ $zip.Dispose()
 
 "TEST: Version of binary should match"
 . docker --version
-if (-Not $(docker --version).Contains("version $version-ce,")) {
+if (-Not $(docker --version).Contains("version $version,")) {
   Write-Error "FAIL: Wrong version of docker installed!"
 }
 

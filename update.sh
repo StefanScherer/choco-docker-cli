@@ -3,7 +3,7 @@
 if [ "$1" = "" ]; then
   echo "Usage: $0 version"
   echo "Update the choco package to a given version"
-  echo "Example: $0 17.06.0-ce"
+  echo "Example: $0 18.08.0"
   exit 1
 fi
 
@@ -20,9 +20,10 @@ if [[ $version = *"-rc"* ]]
 then
   uri="test"
 fi
+set -e
 
-url="https://download.docker.com/win/static/${uri}/x86_64/docker-${version}.zip"
-checksum=$(curl "${url}" | shasum -a 256 | cut -f 1 -d " ")
+url="https://github.com/StefanScherer/docker-cli-builder/releases/download/${version}/docker.exe"
+checksum=$(curl --fail -L "${url}" | shasum -a 256 | cut -f 1 -d " ")
 
 # cut off "-ce", eg. 17.06.0-ce -> 17.06.0
 version=${version//-ce/}
