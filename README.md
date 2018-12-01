@@ -5,8 +5,7 @@ This repository contains Chocolatey Package Manager definitions for the
 
 [![Latest version released](https://img.shields.io/chocolatey/v/docker-cli.svg)](https://chocolatey.org/packages/docker-cli)
 [![Package downloads count](https://img.shields.io/chocolatey/dt/docker-cli.svg)](https://chocolatey.org/packages/docker-cli)
-[![Build status](https://ci.appveyor.com/api/projects/status/0it2fk1v5ttvq7en?svg=true)](https://ci.appveyor.com/project/StefanScherer/choco-docker-cli)
-
+[![Build status](https://ci.appveyor.com/api/projects/status/6n9g2aetrkrmpce8?svg=true)](https://ci.appveyor.com/project/StefanScherer/choco-docker-cli)
 
 Chocolatey releases for Docker are not done nor supported by Docker, Inc.
 This package is maintained by the community members.
