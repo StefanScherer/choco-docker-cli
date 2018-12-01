@@ -1,14 +1,19 @@
 $packageName    = 'docker-cli'
-$url            = 'https://download.docker.com/win/static/edge/x86_64/docker-17.10.0-ce.zip'
-$checksum       = 'd69fac0f201b6f5727e0985990261ddc4e1cb3edd1f8db4ff46f3b2c59c3b873'
+$url            = 'https://github.com/StefanScherer/docker-cli-builder/releases/download/18.09.0/docker.exe'
+$checksum       = '831d191ecb337889287630d4b89a24953f1416deb76f823f42f7101de23ce540'
 $checksumType   = 'sha256'
 $validExitCodes = @(0)
 
 $toolsDir    = "$(Split-Path -parent $MyInvocation.MyCommand.Definition)"
 
-Install-ChocolateyZipPackage `
-  -PackageName "docker-cli" `
+$file = "$($toolsDir)\docker.exe"
+
+if (![System.IO.Directory]::Exists($toolsDir)) {[System.IO.Directory]::CreateDirectory($toolsDir)}
+
+Get-ChocolateyWebFile `
+  -PackageName $packageName `
+  -FileFullPath $file `
   -Url64bit "$url" `
-  -UnzipLocation "$toolsDir" `
   -Checksum64 $checksum `
-  -checksumType64 $checksumType
+  -ChecksumType64 $checksumType
+
