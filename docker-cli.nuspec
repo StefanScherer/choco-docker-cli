@@ -21,7 +21,7 @@ NOTE: Docker client for Windows is not a Docker container engine for Windows. Yo
     <mailingListUrl>https://github.com/docker/docker#talking-to-other-docker-users-and-contributors</mailingListUrl>
     <licenseUrl>http://www.apache.org/licenses/LICENSE-2.0</licenseUrl>
     <requireLicenseAcceptance>false</requireLicenseAcceptance>
-    <iconUrl>https://github.com/StefanScherer/choco-docker-cli/blob/98eed20f4451c7d663706829f8a76df91a5d9eb5/docker.png</iconUrl>
+    <iconUrl>https://raw.githubusercontent.com/StefanScherer/choco-docker-cli/master/docker.png</iconUrl>
     <packageSourceUrl>https://github.com/StefanScherer/choco-docker-cli</packageSourceUrl>
     <releaseNotes>Updated to the latest Docker version.</releaseNotes>
   </metadata>
