@@ -1,6 +1,6 @@
 $packageName    = 'docker-cli'
-$url            = 'https://github.com/StefanScherer/docker-cli-builder/releases/download/18.09.0/docker.exe'
-$checksum       = '831d191ecb337889287630d4b89a24953f1416deb76f823f42f7101de23ce540'
+$url            = 'https://github.com/StefanScherer/docker-cli-builder/releases/download/18.09.6/docker.exe'
+$checksum       = '9B83DDCAE1AAD934EC03F1479BBEDBFFFAC1D592017DAF6CEDC1A3F7CDB782B2'
 $checksumType   = 'sha256'
 $validExitCodes = @(0)
 
