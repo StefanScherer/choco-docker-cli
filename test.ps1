@@ -9,12 +9,6 @@ if ($env:APPVEYOR_BUILD_VERSION) {
   $version = $spec.package.metadata.version
 }
 
-"TEST: Version $version in docker-cli.nuspec file should match"
-[xml]$spec = Get-Content docker-cli.nuspec
-if ($spec.package.metadata.version.CompareTo($version)) {
-  Write-Error "FAIL: Wrong version in nuspec file!"
-}
-
 "TEST: Package should contain only install script"
 Add-Type -assembly "system.io.compression.filesystem"
 $zip = [IO.Compression.ZipFile]::OpenRead("$pwd\docker-cli.$version.nupkg")
