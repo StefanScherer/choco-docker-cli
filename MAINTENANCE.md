@@ -6,10 +6,10 @@ for Docker CE client for Windows.
 ## How it works
 
 This Chocolatey package is designed to download the Docker CE
-client binary (.exe) from `download.docker.com/win/static/edge` and place it
+command line interface (cli) executable from `https://github.com/StefanScherer/docker-cli-builder` and place it
 in `%PATH%`.
 
-The pre-release packages download the docker client binary from `download.docker.com/win/static/test`.
+The pre-release packages download the docker client binary from the same location with the "Pre" meta-tag.
 
 Main installation script is written in PowerShell and is in
 `tools\chocolateyInstall.ps1`.
@@ -52,9 +52,10 @@ With the new branch create a pull request. Now check AppVeyor build status.
 
 At GitHub merge the pull request if all the tests from AppVeyor are green.
 
-#### 5. Draft a release
+#### 5. Draft a release 
 
-Now draft a new release at https://github.com/ahmetalpbalkan/choco-docker-cli/releases/new
+This step is for contributors with write access and ability to issue releases. 
+Now draft a new release at https://github.com/StefanScherer/choco-docker-cli/releases/new
 Enter eg. 17.06.0-ce in the field "Tag version" and "Release title" and add some nice description.
 
 AppVeyor then builds the package again, tests it and then pushes it to Chocolatey for approval.
@@ -97,7 +98,7 @@ from AppVeyor are green.
 
 #### 5. Draft a pre-release
 
-Now draft a new pre-release at https://github.com/ahmetalpbalkan/choco-docker-cli/releases/new
+This step is for contributors with write access and ability to issue releases. Now draft a new pre-release at https://github.com/StefanScherer/choco-docker-cli/releases/new
 Enter eg. 1.12.0-rc5 in the field "Tag version" and "Release title" and add some nice description.
 Remember to check the **This is a pre-release** checkbox.
 
