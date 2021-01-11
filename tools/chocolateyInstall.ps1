@@ -6,7 +6,7 @@ $validExitCodes = @(0)
 
 $params = Get-PackageParameters
 
-if (!$params['toolDir']) 
+if ($params['toolDir']) 
 { 
   $toolsDir = $params['toolDir']
 }
@@ -26,3 +26,7 @@ Get-ChocolateyWebFile `
   -Checksum64 $checksum `
   -ChecksumType64 $checksumType
 
+if ($params['toolDir']) 
+{ 
+  Install-ChocolateyPath $toolsDir -PathType 'Machine'
+}
