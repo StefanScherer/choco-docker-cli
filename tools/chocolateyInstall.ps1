@@ -4,7 +4,16 @@ $checksum       = 'a55792e693d6833ff4d6b1b2efd94fb93c244c859e33c831699e3124408c5
 $checksumType   = 'sha256'
 $validExitCodes = @(0)
 
-$toolsDir    = "$(Split-Path -parent $MyInvocation.MyCommand.Definition)"
+$params = Get-PackageParameters
+
+if ($params['toolDir']) 
+{ 
+  $toolsDir = $params['toolDir']
+}
+else 
+{
+  $toolsDir = "$(Split-Path -parent $MyInvocation.MyCommand.Definition)"
+}
 
 $file = "$($toolsDir)\docker.exe"
 
@@ -17,3 +26,7 @@ Get-ChocolateyWebFile `
   -Checksum64 $checksum `
   -ChecksumType64 $checksumType
 
+if ($params['toolDir']) 
+{ 
+  Install-ChocolateyPath $toolsDir -PathType 'Machine'
+}
