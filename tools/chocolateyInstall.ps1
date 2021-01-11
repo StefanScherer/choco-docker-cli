@@ -17,3 +17,4 @@ Get-ChocolateyWebFile `
   -Checksum64 $checksum `
   -ChecksumType64 $checksumType
 
+Install-ChocolateyPath $toolsDir -PathType 'Machine'
