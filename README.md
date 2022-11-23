@@ -1,5 +1,7 @@
 # choco-docker-cli
 
+**This repo is no longer maintained.** Thanks to [@Geicht](https://github.com/Geicht) for automating the package updates. The new package source is here: https://github.com/geicht/chocolatey-packages/tree/master/docker-cli
+
 This repository contains Chocolatey Package Manager definitions for the
 [Docker CLI for Windows](https://chocolatey.org/packages/docker-cli).
 
